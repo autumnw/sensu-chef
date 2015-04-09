@@ -93,4 +93,4 @@ else
   end
 end
 
-sensu_base_config node.name
+iaas_sensu_base_config node.name
