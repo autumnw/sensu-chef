@@ -26,9 +26,9 @@ ruby_block "sensu_service_trigger" do
 end
 
 if platform_family?("windows")
-  include_recipe "iaas_sensu::_windows"
+  include_recipe "sensu::_windows"
 else
-  include_recipe "iaas_sensu::_linux"
+  include_recipe "sensu::_linux"
 end
 
 directory node.sensu.log_directory do
