@@ -40,7 +40,7 @@ if node['databag'].has_key?('databag_secret')
 elsif node['databag'].has_key?('secret_url')
   databag_secret = get_secret_from_url(node['databag']['secret_url'])
 end
-passwords = Chef::EncryptedDataBagItem.load(databag_name, 'passwords', secret=databag_secret)
+passwords = Chef::EncryptedDataBagItem.load(databag_name, 'passwords', databag_secret)
 default.sensu.rabbitmq.password = passwords['rabbitmq']
 
 # redis
